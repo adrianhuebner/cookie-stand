@@ -14,82 +14,121 @@
 
 // total = 0
 // totalSales = [];
-// 
+//
 
 //  var times should be in military time so that it is easier to distinguish what time it is
 
 // array of all store hours
 var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
-var totalSales = [];
-var totalCookies = 0;
 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+// getRandomInt: function (min, max) {
+//   min = Math.ceil(min);
+//   max = Math.floor(max);
+//   return Math.floor(Math.random() * (max - min)) + min;
+// }
+
+var firstPike = {
+  custmin: 23,
+  custmax: 65,
+  avgcookie: 6.3,
+  sales: [],
+  getRandomInt: function (min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random()*(max - min)) + min;
+  },
+  allCookies: function (){
+    for (var i = 0; i < storeHours.length; i++){
+      var saleHrs = this.getRandomInt(this.custmin,this.custmax);
+      var cookieHrs = Math.round(saleHrs*this.avgcookie);
+      this.avgcookie += cookieHrs;
+      this.sales.push(cookieHrs);
+      console.log(saleHrs);
+    }
+  }
+};
+
+firstPike.allCookies();
+
+
+
+
+
 
 // literal objects
-var firstandPike = {
-  name: '1st and Pike',
-  min: 23,
-  max: 65,
-  cookieaveragesale: 6.3,
-  render: function(){
-    var random = Math.floor(Math.random() * (this.max - this.min)) + this.min;
-    console.log(random);
-  }
-};
+// var firstandPike = {
+//   name: '1st and Pike',
+//   listcustomers: [],
+//   min: 23,
+//   max: 65,
+//   averagecookie: 6.3,
+//   render: function(){
+//     var random = Math.floor(Math.random() * (this.max - this.min)) + this.min;
+//     console.log(random);
+//   }
+// };
 
-var seaTacAirport = {
-  name: 'SeaTac Airport',
-  min: 3,
-  max: 24,
-  cookieaveragesale: 1.2,
-  render: function(){
-    var random = Math.floor(Math.random() * (this.max - this.min)) + this.min;
-    console.log(random);
-  }
-};
+// var seaTacAirport = {
+//   name: 'SeaTac Airport',
+//   listcustomers: [],
+//   min: 3,
+//   max: 24,
+//   averagecookie: 1.2,
+//   render: function(){
+//     var random = Math.floor(Math.random() * (this.max - this.min)) + this.min;
+//     console.log(random);
+//   }
+// };
 
-var seattleCenter = {
-  name: 'Seattle Center',
-  min: 11,
-  max: 38,
-  cookieaveragesale: 3.7,
-  render: function(){
-    var random = Math.floor(Math.random() * (this.max - this.min)) + this.min;
-    console.log(random);
-  }
-};
-
-var captHill = {
-  name: 'Capitol Hill',
-  min: 20,
-  max: 38,
-  cookieaveragesale: 2.3,
-  render: function(){
-    var random = Math.floor(Math.random() * (this.max - this.min)) + this.min;
-    console.log(random);
-  }
-};
-
-var alki = {
-  name: 'Alki',
-  min: 2,
-  max: 16,
-  cookieaveragesale: 4.6,
-  render: function(){
-    var random = Math.floor(Math.random() * (this.max - this.min)) + this.min;
-    console.log(random);
-  }
-};
+// var seattleCenter = {
+//   name: 'Seattle Center',
+//   listcustomers: [],
+//   min: 11,
+//   max: 38,
+//   averagecookie: 3.7,
+//   render: function(){
+//     for (var i = 0; i < this.listcustomers.length; i++)
+//       var random = Math.floor(Math.random() * (this.max - this.min)) + this.min;
+//     console.log(random);
+//     this.listcustomers.push(random);
+//   },
+//   cookierandom: [],
+//   render: function(){
+//     for (var i = 0; i < this.listcustomers.length; i++){
+//       this.cookierandom.push(this.listcustomer[i]*this.randCookies);
+//     }
+//   }
+// };
 
 
-// variable that calls shops
-var shoplist = [firstandPike,seaTacAirport,seattleCenter,captHill,alki];
+// var captHill = {
+//   name: 'Capitol Hill',
+//   listcustomers: [],
+//   min: 20,
+//   max: 38,
+//   averagecookie: 2.3,
+//   render: function(){
+//     var random = Math.floor(Math.random() * (this.max - this.min)) + this.min;
+//     console.log(random);
+//   }
+// };
 
-for (var i = 0; i < shoplist.length; i++){
-  shoplist[i].render();
-}
+// var alki = {
+//   name: 'Alki',
+//   listcustomers: [],
+//   min: 2,
+//   max: 16,
+//   averagecookie: 4.6,
+//   render: function(){
+//     var random = Math.floor(Math.random() * (this.max - this.min)) + this.min;
+//     console.log(random);
+//   }
+// };
 
+
+// // variable that calls shops
+// var shoplist = [firstandPike,seaTacAirport,seattleCenter,captHill,alki];
+
+// for (var i = 0; i < shoplist.length; i++){
+//   shoplist[i].render();
+// }
