@@ -13,47 +13,83 @@
 // out: list of cookies per hour and total
 
 // total = 0
-//  hours = 6am - 8pm
-//  number of sales an hour is Random(min, max)
-//  
+// totalSales = [];
+// 
+
 //  var times should be in military time so that it is easier to distinguish what time it is
 
 // array of all store hours
-var storeHours = [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
+var totalSales = [];
+var totalCookies = 0;
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 // literal objects
 var firstandPike = {
   name: '1st and Pike',
-  minimumcustomer: 23,
-  maximumcustomer: 65,
-  cookieaveragesale: 6.3
+  min: 23,
+  max: 65,
+  cookieaveragesale: 6.3,
+  render: function(){
+    var random = Math.floor(Math.random() * (this.max - this.min)) + this.min;
+    console.log(random);
+  }
 };
 
-var seaTacAirpot = {
+var seaTacAirport = {
   name: 'SeaTac Airport',
-  minimumcustomer: 3,
-  maximumcustomer: 24,
-  cookieaveragesale: 1.2
+  min: 3,
+  max: 24,
+  cookieaveragesale: 1.2,
+  render: function(){
+    var random = Math.floor(Math.random() * (this.max - this.min)) + this.min;
+    console.log(random);
+  }
 };
 
 var seattleCenter = {
   name: 'Seattle Center',
-  minimumcustomer: 11,
-  maximumcustomer: 38,
-  cookieaveragesale: 3.7
+  min: 11,
+  max: 38,
+  cookieaveragesale: 3.7,
+  render: function(){
+    var random = Math.floor(Math.random() * (this.max - this.min)) + this.min;
+    console.log(random);
+  }
 };
 
 var captHill = {
   name: 'Capitol Hill',
-  minimumcustomer: 20,
-  maximumcustomer: 38,
+  min: 20,
+  max: 38,
   cookieaveragesale: 2.3,
+  render: function(){
+    var random = Math.floor(Math.random() * (this.max - this.min)) + this.min;
+    console.log(random);
+  }
 };
 
 var alki = {
   name: 'Alki',
-  minimumcustomer: 2,
-  maximumcustomer: 16,
-  cookieaveragesale: 4.6
+  min: 2,
+  max: 16,
+  cookieaveragesale: 4.6,
+  render: function(){
+    var random = Math.floor(Math.random() * (this.max - this.min)) + this.min;
+    console.log(random);
+  }
 };
+
+
+// variable that calls shops
+var shoplist = [firstandPike,seaTacAirport,seattleCenter,captHill,alki];
+
+for (var i = 0; i < shoplist.length; i++){
+  shoplist[i].render();
+}
 
