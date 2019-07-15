@@ -19,7 +19,7 @@
 //  var times should be in military time so that it is easier to distinguish what time it is
 
 // array of all store hours
-// var storeHours = [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+var storeHours = [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
 // literal objects
 var firstandPike = {
@@ -28,3 +28,32 @@ var firstandPike = {
   maximumcustomer: 65,
   cookieaveragesale: 6.3
 };
+
+var seaTacAirpot = {
+  name: 'SeaTac Airport',
+  minimumcustomer: 3,
+  maximumcustomer: 24,
+  cookieaveragesale: 1.2
+};
+
+var seattleCenter = {
+  name: 'Seattle Center',
+  minimumcustomer: 11,
+  maximumcustomer: 38,
+  cookieaveragesale: 3.7
+};
+
+var captHill = {
+  name: 'Capitol Hill',
+  minimumcustomer: 20,
+  maximumcustomer: 38,
+  cookieaveragesale: 2.3,
+};
+
+var alki = {
+  name: 'Alki',
+  minimumcustomer: 2,
+  maximumcustomer: 16,
+  cookieaveragesale: 4.6
+};
+
