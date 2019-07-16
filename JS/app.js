@@ -236,8 +236,8 @@ for (var i = 0; i < shoplist.length; i++){
 // this.totalCookiesForTheDay += cookiesForOneHour;
 //},
 // rendor: function(){
-  // 
-}
+//
+// }
 // }
 
 // firstPike.generateCookiesEachHour();
@@ -247,3 +247,5 @@ for (var i = 0; i < shoplist.length; i++){
 // var ulSeaTac = document.getElementById('SeaTac Airport');
 // ...
 // var ulAlik = document.getElementById('Alki');
+
+
