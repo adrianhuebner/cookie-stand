@@ -213,3 +213,38 @@ for (var i = 0; i < shoplist.length; i++){
   shoplist[i].allCookies();
   shoplist[i].rendor();
 }
+
+// helper function
+// got this function from MDN - math.random() doc
+// function randomNumber(min.max){
+//  return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+// this is inside of the object
+// generateCustomersEachHour: function(){
+// for(var i = 0; i < hours.length; i++){
+//  var customersPerHour = randomNumber(this.minCustomersEachHour, this.maxCustomersEachHour);
+//
+//  this.CustomersEachHour.push(customersPerHour);
+// }
+// }
+// genterateCookiesEachHour: function(){
+//  this.generateCustomersEachHour();
+//  for(var i = 0; i < hours.length; i++){
+//     var cookiesForOneHour = Math.ciel(this.customersEachHour[i] * this.averageCookiesPerCustomer);
+//
+// this.CookiesEachHour.push(cookiesForOneHour);
+// this.totalCookiesForTheDay += cookiesForOneHour;
+//},
+// rendor: function(){
+  // 
+}
+// }
+
+// firstPike.generateCookiesEachHour();
+
+// on top you would do this
+// var ulFirstPike = document.getElementById('first-pike');
+// var ulSeaTac = document.getElementById('SeaTac Airport');
+// ...
+// var ulAlik = document.getElementById('Alki');
