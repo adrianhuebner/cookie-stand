@@ -25,7 +25,6 @@ var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm'
 //   min = Math.ceil(min);
 //   max = Math.floor(max);
 //   return Math.floor(Math.random() * (max - min)) + min;
-// }
 
 var firstPike = {
   ulEl: document.getElementById('firstPike'),
