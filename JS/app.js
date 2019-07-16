@@ -28,10 +28,12 @@ var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm'
 // }
 
 var firstPike = {
+  ulEl: document.getElementById('firstPike'),
   custmin: 23,
   custmax: 65,
   avgcookie: 6.3,
   sales: [],
+  cookieTotal: 0,
   getRandomInt: function (min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -41,14 +43,24 @@ var firstPike = {
     for (var i = 0; i < storeHours.length; i++){
       var saleHrs = this.getRandomInt(this.custmin,this.custmax);
       var cookieHrs = Math.round(saleHrs*this.avgcookie);
-      this.avgcookie += cookieHrs;
+      this.cookieTotal += cookieHrs;
       this.sales.push(cookieHrs);
       console.log(saleHrs);
+    }
+  },
+  rendor: function(){
+    for (var i = 0; i < storeHours.length; i++){
+      var liEl = document.createElement('li');
+      liEl.textContent = `${storeHours[i]} : ${this.sales[i]}`;
+      this.ulEl.appendChild(liEl);
     }
   }
 };
 
+
 firstPike.allCookies();
+firstPike.rendor();
+
 
 
 
