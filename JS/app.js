@@ -269,7 +269,7 @@ function randomNumberGenerator(min, max){
   return Math.ceil(Math.random() * (max - min + 1)) + min;
 }
 
-// this code got inspired by classork by Lena and then help from TA's Ron and Ryna
+// this code got inspired by classork by Lena and then help from Lena and TA's Ron and Ryna
 CookieSales.prototype.averageCustomerPerHour = function(){
   for(var i = 0; i < storeHours.length; i++){
     var randomCustomerAmount = randomNumberGenerator(this.minimumCustomers, this.maximumCustomers);
@@ -279,9 +279,15 @@ CookieSales.prototype.averageCustomerPerHour = function(){
   }
 };
 
+// using similar logic to do cookie sales
 CookieSales.prototype.averageCookiesPerHour = function(){
-  
-}
+  for(var i = 0; i < storeHours.length; i++){
+    var randomCookieAmount = Math.ceil(this.customersInStorePerHour[i] * this.averageCookiesPerCustomer);
+    console.log(randomCookieAmount);
+    this.salesofCookiesPerhour.push(randomCookieAmount);
+    console.log(this.salesofCookiesPerhour);
+  }
+};
 
 var firstPike = new CookieSales('First and Pike',23,65,6.3);
 console.log(firstPike);
