@@ -1,5 +1,7 @@
 'use strict';
 
+var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
+
 // location / min cus / max cus / cookie av
 // 1st & Pike / 23 / 65 / 6.3
 // SeaTac / 3 / 24 / 1.2
@@ -19,7 +21,6 @@
 //  var times should be in military time so that it is easier to distinguish what time it is
 
 // array of all store hours
-// var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
 
 // getRandomInt: function (min, max) {
 //   min = Math.ceil(min);
@@ -248,12 +249,40 @@
 // ...
 // var ulAlik = document.getElementById('Alki');
 
+var allLocations = [];
+
 function CookieSales(storelocation,minimumCustomersPerHour,maximumCustomersPerHour,averageCookieSales){
   this.storeLocations = storelocation;
   this.minimumCustomers = minimumCustomersPerHour;
   this.maximumCustomers = maximumCustomersPerHour;
   this.averageCookiesPerCustomer = averageCookieSales;
+  this.salesofCookiesPerhour = [];
+  this.customersInStorePerHour = [];
+  this.averageCustomerPerHour();
+  this.averageCookiesPerHour();
+  allLocations.push(this);
 }
+
+// helper function
+// got this function from MDN - math.random() doc
+function randomNumberGenerator(min, max){
+  return Math.ceil(Math.random() * (max - min + 1)) + min;
+}
+
+// this code got inspired by classork by Lena and then help from TA's Ron and Ryna
+CookieSales.prototype.averageCustomerPerHour = function(){
+  for(var i = 0; i < storeHours.length; i++){
+    var randomCustomerAmount = randomNumberGenerator(this.minimumCustomers, this.maximumCustomers);
+    console.log(randomCustomerAmount);
+    this.customersInStorePerHour.push(randomCustomerAmount);
+    console.log(this.customersInStorePerHour);
+  }
+};
+
+CookieSales.prototype.averageCookiesPerHour = function(){
+  
+}
+
 var firstPike = new CookieSales('First and Pike',23,65,6.3);
 console.log(firstPike);
 
@@ -268,12 +297,3 @@ console.log(captHill);
 
 var alki = new CookieSales('Alki',2,16,4.6);
 console.log(alki);
-
-
-
-
-// helper function
-// got this function from MDN - math.random() doc
-function randomNumberGenerator(min, max){
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
