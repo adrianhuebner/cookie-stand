@@ -100,9 +100,10 @@ CookieSales.prototype.render = function(){
 function makeFooter(){
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
-  tdEl.textContent = 'Total Hourly Cookie Sales:'
+  tdEl.textContent = 'Total Hourly Cookie Sales:';
   trEl.appendChild(tdEl);
   tableEl.appendChild(trEl);
+
   for (var i = 0; i < storeHours.length; i++){
     var CookiesSoldPerHour = 0;
     for (var j = 0; j < allLocations.length; j++){
@@ -113,6 +114,13 @@ function makeFooter(){
     tdEl.textContent = CookiesSoldPerHour;
     trEl.appendChild(tdEl);
   }
+  var grandTotalofCookiesSold = 0;
+  for(var i = 0; i < allLocations.length; i++){
+    grandTotalofCookiesSold += allLocations[i].totalCookiesSoldforDay;
+  }
+  tdEl = document.createElement('td');
+  tdEl.textContent = grandTotalofCookiesSold;
+  trEl.appendChild(tdEl);
 }
 
 makeHeader();
