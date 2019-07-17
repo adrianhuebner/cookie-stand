@@ -30,9 +30,9 @@ function randomNumberGenerator(min, max){
 CookieSales.prototype.averageCustomerPerHour = function(){
   for(var i = 0; i < storeHours.length; i++){
     var randomCustomerAmount = randomNumberGenerator(this.minimumCustomers, this.maximumCustomers);
-    console.log(randomCustomerAmount);
+    //console.log(randomCustomerAmount);
     this.customersInStorePerHour.push(randomCustomerAmount);
-    console.log(this.customersInStorePerHour);
+    //console.log(this.customersInStorePerHour);
   }
 };
 
@@ -40,8 +40,8 @@ CookieSales.prototype.averageCustomerPerHour = function(){
 CookieSales.prototype.averageCookiesPerHour = function(){
   for(var i = 0; i < storeHours.length; i++){
     var randomCookieAmount = Math.ceil(this.customersInStorePerHour[i] * this.averageCookiesPerCustomer);
-    console.log(randomCookieAmount);
-    console.log(this.salesofCookiesPerhour);
+    //console.log(randomCookieAmount);
+    //console.log(this.salesofCookiesPerhour);
     this.totalCookiesSoldforDay += randomCookieAmount;
     this.salesofCookiesPerhour.push(randomCookieAmount);
   }
@@ -53,7 +53,7 @@ new CookieSales('Seattle Center',11,38,3.7);
 new CookieSales('Capitol Hill',20,38,3.7);
 new CookieSales('Alki',2,16,4.6);
 
-console.log(allLocations);
+//console.log(allLocations);
 
 var tableEl = document.getElementById('table');
 
@@ -103,6 +103,16 @@ function makeFooter(){
   tdEl.textContent = 'Total Hourly Cookie Sales:'
   trEl.appendChild(tdEl);
   tableEl.appendChild(trEl);
+  for (var i = 0; i < storeHours.length; i++){
+    var CookiesSoldPerHour = 0;
+    for (var j = 0; j < allLocations.length; j++){
+      CookiesSoldPerHour += allLocations[j].salesofCookiesPerhour[i];
+    }
+    console.log(CookiesSoldPerHour);
+    tdEl = document.createElement('td');
+    tdEl.textContent = CookiesSoldPerHour;
+    trEl.appendChild(tdEl);
+  }
 }
 
 makeHeader();
