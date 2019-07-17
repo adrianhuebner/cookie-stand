@@ -258,8 +258,8 @@ function CookieSales(storelocation,minimumCustomersPerHour,maximumCustomersPerHo
   this.averageCookiesPerCustomer = averageCookieSales;
   this.salesofCookiesPerhour = [];
   this.customersInStorePerHour = [];
-  this.averageCustomerPerHour();
-  this.averageCookiesPerHour();
+  // this.averageCustomerPerHour();
+  // this.averageCookiesPerHour();
   allLocations.push(this);
 }
 
@@ -297,8 +297,9 @@ new CookieSales('Alki',2,16,4.6);
 
 console.log(allLocations);
 
+var tableEl = document.getElementById('table');
+
 function makeHeader(){
-  var tableEl = document.getElementById('table');
   var trEl = document.createElement('tr');
   tableEl.appendChild(trEl);
 
@@ -315,4 +316,25 @@ function makeHeader(){
   thEl.textContent = 'Total';
   trEl.appendChild(thEl);
 }
+
+CookieSales.prototype.render = function(){
+  this.averageCustomerPerHour();
+  this.averageCookiesPerHour();
+  
+  var trEl = document.createElement('tr');
+  tableEl.appendChild(trEl);
+
+  var thEl = document.createElement('th');
+  thEl.textContent = this.storeLocations;
+  trEl.appendChild(thEl);
+
+  for(var i = 0; i < storeHours.length; i++){
+    var tdEl = document.createElement('td');
+    tdEl.textContent = this.salesofCookiesPerhour[i];
+    trEl.appendChild(tdEl);
+  }
+};
 makeHeader();
+for(var i = 0; i < allLocations.length; i++){
+  allLocations[i].render();
+}
