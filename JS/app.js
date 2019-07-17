@@ -5,6 +5,7 @@ var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm'
 
 //location empty arrray for object instance
 var allLocations = [];
+var formEl = document.getElementById('newStoreInformation');
 
 //constructor function for all locations to reference
 function CookieSales(storelocation,minimumCustomersPerHour,maximumCustomersPerHour,averageCookieSales){
@@ -52,6 +53,25 @@ new CookieSales('SeaTac Airport',3,24,1.2);
 new CookieSales('Seattle Center',11,38,3.7);
 new CookieSales('Capitol Hill',20,38,3.7);
 new CookieSales('Alki',2,16,4.6);
+
+// put listner on the form
+formEl.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  var newStoreLocation = e.target.storeName.value;
+  //console.log(newStoreLocation);
+  var newMinimumCustomer = e.target.minimumAmountCustomers.value;
+  //console.log(newMinimumCustomer);
+  var newMaximumCustomer = e.target.maximumAmountCustomers.value;
+  //console.log(newMaximumCustomer);
+  var newCookieAverage = e.target.averageCookiesSold.value;
+  //console.log(newCookieAverage);
+
+  new CookieSales(newStoreLocation,newMinimumCustomer,newMaximumCustomer,newCookieAverage);
+}
+
+);
+
 
 //console.log(allLocations);
 
@@ -109,7 +129,7 @@ function makeFooter(){
     for (var j = 0; j < allLocations.length; j++){
       CookiesSoldPerHour += allLocations[j].salesofCookiesPerhour[i];
     }
-    console.log(CookiesSoldPerHour);
+    //console.log(CookiesSoldPerHour);
     tdEl = document.createElement('td');
     tdEl.textContent = CookiesSoldPerHour;
     trEl.appendChild(tdEl);
