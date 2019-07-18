@@ -65,11 +65,9 @@ var tableEl = document.getElementById('table');
 function makeHeader(){
   var trEl = document.createElement('tr');
   tableEl.appendChild(trEl);
-  
   var thEl = document.createElement('th');
   thEl.textContent = 'Location';
   trEl.appendChild(thEl);
-  
   for(var i = 0; i < storeHours.length; i++){
     thEl = document.createElement('th');
     thEl.textContent = storeHours[i];
@@ -83,20 +81,16 @@ function makeHeader(){
 CookieSales.prototype.render = function(){
   this.averageCustomerPerHour();
   this.averageCookiesPerHour();
-  
   var trEl = document.createElement('tr');
   tableEl.appendChild(trEl);
-  
   var thEl = document.createElement('th');
   thEl.textContent = this.storeLocations;
   trEl.appendChild(thEl);
-  
   for(var i = 0; i < storeHours.length; i++){
     var tdEl = document.createElement('td');
     tdEl.textContent = this.salesofCookiesPerhour[i];
     trEl.appendChild(tdEl);
   }
-  
   tdEl = document.createElement('td');
   tdEl.textContent = this.totalCookiesSoldforDay;
   trEl.appendChild(tdEl);
@@ -108,7 +102,6 @@ function makeFooter(){
   tdEl.textContent = 'Total Hourly Cookie Sales:';
   trEl.appendChild(tdEl);
   tableEl.appendChild(trEl);
-  
   for (var i = 0; i < storeHours.length; i++){
     var CookiesSoldPerHour = 0;
     for (var j = 0; j < allLocations.length; j++){
@@ -120,8 +113,8 @@ function makeFooter(){
     trEl.appendChild(tdEl);
   }
   var grandTotalofCookiesSold = 0;
-  for(var i = 0; i < allLocations.length; i++){
-    grandTotalofCookiesSold += allLocations[i].totalCookiesSoldforDay;
+  for(var t = 0; t < allLocations.length; t++){
+    grandTotalofCookiesSold += allLocations[t].totalCookiesSoldforDay;
   }
   tdEl = document.createElement('td');
   tdEl.textContent = grandTotalofCookiesSold;
@@ -148,7 +141,7 @@ formEl.addEventListener('submit', function(e){
   makeHeader();
   for(var i = 0; i < allLocations.length; i++){
     allLocations[i].render();
-  };
+  }
   makeFooter();
   //rendering table back to page
 });
@@ -156,14 +149,5 @@ formEl.addEventListener('submit', function(e){
 makeHeader();
 for(var i = 0; i < allLocations.length; i++){
   allLocations[i].render();
-};
+}
 makeFooter();
-
-
-
-// location / min cus / max cus / cookie av
-// 1st & Pike / 23 / 65 / 6.3
-// SeaTac / 3 / 24 / 1.2
-// SeattleCenter / 11 / 38 / 3.7
-// CaptHill / 20 / 38 / 2.3
-// Alki / 2 / 16 /4.6
