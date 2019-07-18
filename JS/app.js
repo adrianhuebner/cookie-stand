@@ -54,12 +54,6 @@ new CookieSales('Seattle Center',11,38,3.7);
 new CookieSales('Capitol Hill',20,38,3.7);
 new CookieSales('Alki',2,16,4.6);
 
-// put listner on the form
-
-
-
-//console.log(allLocations);
-
 var tableEl = document.getElementById('table');
 
 function makeHeader(){
@@ -98,9 +92,9 @@ CookieSales.prototype.render = function(){
 
 function makeFooter(){
   var trEl = document.createElement('tr');
-  var tdEl = document.createElement('td');
-  tdEl.textContent = 'Total Hourly Cookie Sales:';
-  trEl.appendChild(tdEl);
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Total Hourly Cookie Sales:';
+  trEl.appendChild(thEl);
   tableEl.appendChild(trEl);
   for (var i = 0; i < storeHours.length; i++){
     var CookiesSoldPerHour = 0;
@@ -108,7 +102,7 @@ function makeFooter(){
       CookiesSoldPerHour += allLocations[j].salesofCookiesPerhour[i];
     }
     //console.log(CookiesSoldPerHour);
-    tdEl = document.createElement('td');
+    var tdEl = document.createElement('td');
     tdEl.textContent = CookiesSoldPerHour;
     trEl.appendChild(tdEl);
   }
