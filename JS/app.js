@@ -27,6 +27,12 @@ function randomNumberGenerator(min, max){
   return Math.ceil(Math.random() * (max - min + 1)) + min;
 }
 
+// function addElement(childElType, childContent, parentEl){
+//   var childElement = document.createElement(childElType);
+//   childElement.textContent = childContent;
+//   parentEl.appendChild(childElement);
+// }
+
 // this code got inspired by classork by Lena and then help from Lena and TA's Ron and Ryna
 CookieSales.prototype.averageCustomerPerHour = function(){
   for(var i = 0; i < storeHours.length; i++){
