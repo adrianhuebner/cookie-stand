@@ -1,14 +1,48 @@
 <!Doctype html>
 <html>
+
   <head>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel = "stylesheet" type = "text/css" href = "css/reset.css" />
+    <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
   </head>
+
   <main>
+
+    <form id="newStoreInformation">
+      <fieldset>
+        <label>New Store Location:</label>
+        <input name="storeName" type="text" />
+
+        <br />
+        
+        <label>Minimum Number of Customers in Store:</label>
+        <input name="minimumAmountCustomers" type="number" />
+
+        <br />
+
+        <label>Maximum Number of Customers in Store:</label>
+        <input name="maximumAmountCustomers" type="number" />
+
+        <br />
+
+        <label>Average Cookies Sold per Customer:</label>
+        <input name="averageCookiesSold" type="number" />
+
+        <br />
+ 
+        <input type="submit" name="submitButton" value="submit" />
+
+      </fieldset>
+    </form>
+
     <table>
       <tbody id="table"></tbody>
     </table>
+
   </main>
+
   <footer>
     <script src="JS/app.js"></script>
   </footer>
+
 </html>

@@ -8,7 +8,8 @@
 `}`
 
 -help from classmates:
+
 - James Dansie
 - Susanna Lakey
 - Julie Erlemeier
-- Sharina Stubbs 
+- Sharina Stubbs
