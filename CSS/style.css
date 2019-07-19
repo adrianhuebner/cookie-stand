@@ -1,8 +1,8 @@
 header>img{
-  float: left;
-  margin-right: 10%;
-  max-width: 20%;
-  height: auto;
+  position: absolute;
+  top: .5%;
+  left: 10%;
+  max-width: 15%;
 }
 h1{
   text-align: center;
@@ -10,6 +10,7 @@ h1{
   font-family: 'Acme', sans-serif;
   color: #FFB5A6;
   background-color: #ffd0c769;
+  padding: 1%;
 }
 nav{
   text-align: center;
@@ -21,7 +22,6 @@ ul{
 }
 
 li{
-  padding: 5%;
   display: inline-block;
   font-size: 125%;
   font-family: 'Acme', sans-serif;
@@ -31,6 +31,33 @@ li a{
   text-align: center;
   text-decoration: none;
 }
-li a hoover:{
+li a hoover {
   background-color: #ffd0c799;
+}
+h2{
+  font-family: 'Acme', sans-serif;
+  font-size: 150%;
+  text-decoration: underline;
+  text-align: center;
+  color: #f57a61;
+  background-color: #ffd0c769;
+}
+p{
+  text-align: left;
+  font-size: 110%;
+  font-family: 'Acme', sans-serif;
+  padding: 5%;
+
+}
+#familyphoto{
+  width: 45%;
+  float: left;
+  margin: 1.5%;
+}
+article{
+  float: right;
+  /* display: inline-block; */
+  width: 50%;
+  background-color: #ff775f21;
+  color: #f57a61;
 }
