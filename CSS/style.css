@@ -1,0 +1,63 @@
+header>img{
+  position: absolute;
+  top: .5%;
+  left: 10%;
+  max-width: 15%;
+}
+h1{
+  text-align: center;
+  font-size: 350%;
+  font-family: 'Acme', sans-serif;
+  color: #FFB5A6;
+  background-color: #ffd0c769;
+  padding: 1%;
+}
+nav{
+  text-align: center;
+}
+ul{
+  height: 80px;
+  list-style-type: none;
+  background: #FF775F;
+}
+
+li{
+  display: inline-block;
+  font-size: 125%;
+  font-family: 'Acme', sans-serif;
+  color: #FFB5A6;
+}
+li a{
+  text-align: center;
+  text-decoration: none;
+}
+li a hoover {
+  background-color: #ffd0c799;
+}
+h2{
+  font-family: 'Acme', sans-serif;
+  font-size: 150%;
+  text-decoration: underline;
+  text-align: center;
+  color: #f57a61;
+  background-color: #ffd0c769;
+}
+p{
+  text-align: left;
+  font-size: 110%;
+  font-family: 'Acme', sans-serif;
+  padding: 5%;
+
+}
+#familyphoto{
+  width: 45%;
+  float: left;
+  margin: 1.5%;
+}
+article{
+  float: right;
+  /* display: inline-block; */
+  width: 50%;
+  background-color: #ff775f21;
+  color: #f57a61;
+}
