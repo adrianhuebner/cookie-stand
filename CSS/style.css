@@ -1,8 +1,7 @@
-header>img{
-  position: absolute;
-  top: .5%;
-  left: 10%;
-  max-width: 15%;
+img[title="salmon-logo"]{
+  margin-right: 765px;
+  width: 250px;
+  height: auto;
 }
 h1{
   text-align: center;
@@ -14,25 +13,27 @@ h1{
 }
 nav{
   text-align: center;
+  width: 100%;
 }
 ul{
-  height: 80px;
+  height: 90px;
   list-style-type: none;
   background: #FF775F;
+  margin-top: -90px;
 }
-
 li{
   display: inline-block;
   font-size: 125%;
   font-family: 'Acme', sans-serif;
   color: #FFB5A6;
+  padding: 30px;
 }
 li a{
   text-align: center;
   text-decoration: none;
 }
-li a hoover {
-  background-color: #ffd0c799;
+body{
+  text-align: center;
 }
 h2{
   font-family: 'Acme', sans-serif;
@@ -42,22 +43,67 @@ h2{
   color: #f57a61;
   background-color: #ffd0c769;
 }
+img[title="familyphoto"]{
+  width: 450px;
+  height: auto;
+  margin-left: 10px;
+  margin-top: 10px;
+}
 p{
   text-align: left;
   font-size: 110%;
   font-family: 'Acme', sans-serif;
-  padding: 5%;
+  padding: 5px;
+  margin-left: 5px;
+}
 
-}
-#familyphoto{
-  width: 45%;
-  float: left;
-  margin: 1.5%;
-}
 article{
   float: right;
   /* display: inline-block; */
   width: 50%;
   background-color: #ff775f21;
   color: #f57a61;
+  margin-right: 65px;
+  margin-top: 10px;
+}
+
+#newStoreInformation{
+  font-family: 'Acme', sans-serif;
+  background-color: #fda492da;
+  margin-top: 20px;
+  padding: 5px;
+  width: 450px;
+  margin-left: 450px;
+  border: solid 5px salmon;
+  color: #EB7466;
+}
+input[type=submit]{
+  background-color: #F0A882;
+  border: none;
+  padding: 10px 30px;
+  font-family: 'Acme', sans-serif;
+  color: white;
+}
+table{
+  font-family: 'Acme', sans-serif;
+  border-collapse: collapse;
+  margin-left: 125px;
+  margin-top: 75px;
+}
+table, tr, td{
+  border: 2px solid lightsalmon;
+}
+tr:nth-child(even){
+  background-color: #E5C3C1;
+}
+tr:hover{
+  background-color: rgba(247, 193, 183, 0.911);
+}
+th{
+  background-color: #FFF2F2;
+  color: #E5D2D1;
+}
+th,td{
+  padding: 10px;
+  text-align: left;
 }
